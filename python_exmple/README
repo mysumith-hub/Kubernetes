@@ -13,4 +13,3 @@ Kubernetes Example with Python3 and multi container with Nginx Included using Mi
 
 Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
 
-9985136366
