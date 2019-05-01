@@ -1,0 +1,16 @@
+Kubernetes Example with Python3 and multi container with Nginx Included using Minikube as Kubernetes Cluster
+
+- Create Python3 virtual environment : python3 -m venv flask_api
+- Activate virtual environment: source flask_api/bin/activate
+- Install Pyhton packages using pip : pip install -r requirments.txt
+- Build Docker image in local docker build -t rest-app:1.0 .
+- To check the created image is working or not : docker run -it -d -p8181:8181 rest-app:1.0
+- Run 'http://localhost:8181/api/v1/health-check'
+- Just for validation and removing image please run : docker run --rm -p8181:8181 rest-app:1.0
+- Create deployment manifest file and run : kubectl create -f deployment.yaml
+- Create service manifest file and run : kubectl create -f service.yaml
+
+
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+
+9985136366
