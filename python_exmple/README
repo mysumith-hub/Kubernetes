@@ -1,4 +1,4 @@
-Kubernetes Example with Python3 and multi container with Nginx Included using Minikube as Kubernetes Cluster
+Kubernetes Example with Python3 and multi container Flask Api with Nginx Included using Minikube as Kubernetes Cluster
 
 - Create Python3 virtual environment : python3 -m venv flask_api
 - Activate virtual environment: source flask_api/bin/activate
