@@ -6,10 +6,11 @@ Kubernetes Example with Python3 and multi container with Nginx Included using Mi
 - Build Docker image in local docker build -t rest-app:1.0 .
 - To check the created image is working or not : docker run -it -d -p8181:8181 rest-app:1.0
 - Run 'http://localhost:8181/api/v1/health-check'
-- Just for validation and removing image please run : docker run --rm -p8181:8181 rest-app:1.0
-- Create deployment manifest file and run : kubectl create -f deployment.yaml
-- Create service manifest file and run : kubectl create -f service.yaml
-
-
-Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
-
+- Just for validation and removing container please run : docker run --rm -p8181:8181 rest-app:1.0
+- Run deployment manifest file, which will create deployment and pods: kubectl create -f deployment.yaml
+- Run service manifest file with type as NodePort, which exposes api to outside of the node on NodePort: kubectl create -f service.yaml
+- Run command to get the services and port: kubectl get svc
+  NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                       AGE
+  kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP                       42d
+  rest-app     NodePort    10.101.3.155   <none>        8181:30863/TCP,80:30643/TCP   1h
+- We can hit http://<Minikube_ip>:30863:/api/v1/health-check
